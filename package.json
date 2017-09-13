@@ -10,6 +10,11 @@
     "build:dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack"
   },
+  "babel": {
+    "presets": [
+      "@dosomething/babel-config"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DoSomething/puck-client.git"
@@ -26,6 +31,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "@dosomething/babel-config": "^1.0.0",
     "@dosomething/eslint-config": "^3.1.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
