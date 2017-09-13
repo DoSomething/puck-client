@@ -1,1 +1,2 @@
-export { Provider as AnalyticsProvder } from './lib/Provider';
+export Provider from './lib/Provider';
+export Connector from './lib/Connector';
