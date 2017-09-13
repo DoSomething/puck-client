@@ -1,0 +1,17 @@
+# Builds
+dist
+
+# Ignore dependencies
+node_modules
+npm-debug.log
+
+# Ignore macOS temporary files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# editor ignores
+*.sublime-workspace
+*.sublime-project
+.idea

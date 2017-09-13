@@ -1,0 +1,31 @@
+{
+  "name": "puck-client",
+  "version": "1.0.0",
+  "description": "The client for Puck",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "lint": "eslint",
+    "start": "NODE_ENV=development webpack --watch",
+    "build:dev": "NODE_ENV=development webpack",
+    "build": "NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoSomething/puck-client.git"
+  },
+  "author": "Joe Kent <jkent@dosomething.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DoSomething/puck-client/issues"
+  },
+  "homepage": "https://github.com/DoSomething/puck-client#readme",
+  "devDependencies": {
+    "@dosomething/webpack-config": "^2.0.4",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "@dosomething/eslint-config": "^3.1.0"
+  }
+}
