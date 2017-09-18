@@ -1,5 +1,5 @@
 {
-  "name": "puck-client",
+  "name": "@dosomething/puck-client",
   "version": "1.0.0",
   "description": "The client for Puck",
   "main": "index.js",
