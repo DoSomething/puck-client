@@ -1,8 +1,9 @@
 # Builds
-dist
+dist/
+build/
 
 # Ignore dependencies
-node_modules
+node_modules/
 npm-debug.log
 
 # Ignore macOS temporary files

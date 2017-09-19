@@ -2,14 +2,14 @@
   "name": "@dosomething/puck-client",
   "version": "1.0.2",
   "description": "The client for Puck",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "npm run test",
     "lint": "eslint",
     "start": "NODE_ENV=development webpack --watch",
     "build:dev": "NODE_ENV=development webpack",
-    "build": "NODE_ENV=production webpack",
-    "prepublish": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack && babel lib --out-dir build",
+    "prepublish": "npm run build"
   },
   "babel": {
     "presets": [
@@ -30,6 +30,7 @@
     "@dosomething/babel-config": "^1.0.0",
     "@dosomething/eslint-config": "^3.1.0",
     "@dosomething/webpack-config": "^2.0.4",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "eslint-loader": "^1.9.0",
     "webpack": "^3.5.6",
