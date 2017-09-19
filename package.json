@@ -27,14 +27,15 @@
   },
   "homepage": "https://github.com/DoSomething/puck-client#readme",
   "devDependencies": {
+    "@dosomething/babel-config": "^1.0.0",
+    "@dosomething/eslint-config": "^3.1.0",
     "@dosomething/webpack-config": "^2.0.4",
+    "babel-eslint": "^8.0.0",
+    "eslint-loader": "^1.9.0",
     "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "@dosomething/babel-config": "^1.0.0",
-    "@dosomething/eslint-config": "^3.1.0",
-    "babel-eslint": "^8.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "socket.io-client": "^2.0.3"
