@@ -16,20 +16,25 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PuckProvider } from 'puck-client';
 import initializeStore from './initializeStore';
+import historyInit from './historyInit';
 
 const App = () => (
   const store = initializeStore();
+  const history = historyInit();
 
-  const mapStoreToUser = () => (
+  const getUser = () => (
     store.getState().user.id
   );
+
+  const getHistory = () => history;
 
   return (
     <Provider store={store}>
       <PuckProvider
         source="your-app-name"
         puckUrl={window.ENV.PUCK_URL}
-        mapStoreToUser={mapStoreToUser}
+        getUser={getUser}
+        getHistory={getHistory}
       >
         {/* ... */}
       </PuckProvider>
