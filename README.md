@@ -26,15 +26,13 @@ const App = () => (
     store.getState().user.id
   );
 
-  const getHistory = () => history;
-
   return (
     <Provider store={store}>
       <PuckProvider
         source="your-app-name"
         puckUrl={window.ENV.PUCK_URL}
         getUser={getUser}
-        getHistory={getHistory}
+        history={history}
       >
         {/* ... */}
       </PuckProvider>
