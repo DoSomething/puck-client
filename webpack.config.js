@@ -6,6 +6,11 @@ module.exports = configure({
   entry: {
     app: './index.js'
   },
+  module: {
+    loaders: [
+      { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', exclude: /node_modules/ },
+    ],
+  },
   output: {
     path: path.join(__dirname, '/dist'),
   },
