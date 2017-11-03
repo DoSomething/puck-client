@@ -37,8 +37,10 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "socket.io-client": "^2.0.3"
+    "socket.io-client": "^2.0.3",
+    "whatwg-fetch": "^2.0.3"
   }
 }
