@@ -4,8 +4,6 @@ const path = require('path');
 
 module.exports = configure({
   entry: [
-    'whatwg-fetch',
-    'babel-polyfill',
     './lib/index.js',
   ],
   module: {

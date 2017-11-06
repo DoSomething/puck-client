@@ -116,8 +116,3 @@ function onClick() {
 All of the same params from the React version can be used here, but some have been intentionally omitted (eg: `history`) because they are irrelevant for non-React Router based applications.
 
 When using the pure Puck engine, simply call `trackEvent` on it.
-
-# Spec changelong
-
-### 1.1.0
-Added a `cookieId` to help with cross domain tracking.
