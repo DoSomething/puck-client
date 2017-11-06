@@ -2,14 +2,15 @@
 
 This is a client for sending data to [Puck](https://github.com/DoSomething/puck) over a websocket. It integrates with your applications Redux store and React components to provide a clean way to send custom metrics. Additionally, it standardizes and automatically injects data that is useful across any event. Checkout the [Puck data model](https://github.com/DoSomething/puck#data-model) to see what that looks like.
 
-## Usage
+## Installation
 
-#### 1. Install the puck client
 ```sh
 $ npm install @dosomething/puck-client
 ```
 
-#### 2. Add the Puck Provider to your React+Redux application.
+## Usage with React
+
+Add the Puck Provider to your React+Redux application.
 
 ```js
 import React from 'react';
@@ -43,7 +44,7 @@ const App = () => (
 export default App;
 ```
 
-#### 3. Connect your components to Puck.
+Next, connect your components to Puck using the `PuckConnector`.
 
 ```js
 import { connect } from 'react-redux';
@@ -62,7 +63,7 @@ const actionCreators = {
 export default connect(mapStateToProps, actionCreators)(PuckConnector(Feed));
 ```
 
-#### 4. Track events! You can either do this in your Redux container or the component itself.
+From here you can either wrap a Redux action with `trackEvent`,
 
 ```js
 const mapPropsToEvents = trackEvent => ({
@@ -73,6 +74,8 @@ const mapPropsToEvents = trackEvent => ({
 
 export default connect(mapStateToProps, actionCreators)(PuckConnector(Feed, mapPropsToEvents));
 ```
+
+Or you can manually decide when to call `trackEvent` by using the function the props.
 
 ```js
 import React from 'react';
@@ -87,3 +90,29 @@ const Feed = ({ trackEvent, campaignId }) => {
 
 export default Feed;
 ```
+
+## Usage without React
+
+When using Puck without React, add the Puck Engine to your app.
+
+```js
+import { Engine } from '@dosomething/puck-client';
+
+let puck = null;
+
+function onReady() {
+  puck = new Engine({
+    source: "your-app-name",
+    puckUrl: window.env.PUCK_URL,
+    getUser: () => window.state.userId,
+  });
+}
+
+function onClick() {
+  puck.trackEvent('on click', { button: true });
+}
+```
+
+All of the same params from the React version can be used here, but some have been intentionally omitted (eg: `history`) because they are irrelevant for non-React Router based applications.
+
+When using the pure Puck engine, simply call `trackEvent` on it.
