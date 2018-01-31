@@ -126,11 +126,7 @@ import { PuckWaypoint } from '@dosomething/puck-client';
 
 const Example = () => (
   <div className="container" style={{ height: '1000px' }}>
-    <PuckWaypoint name="half-way-point">
-      <div className="half" style={{ margin-top: '500px'}}>
-        <h1>sup</h1>
-      </div>
-    </PuckWaypoint>
+    <PuckWaypoint name="half-way-point" />
   </div>
 );
 ```
