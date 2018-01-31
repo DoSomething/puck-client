@@ -116,3 +116,22 @@ function onClick() {
 All of the same params from the React version can be used here, but some have been intentionally omitted (eg: `history`) because they are irrelevant for non-React Router based applications.
 
 When using the pure Puck engine, simply call `trackEvent` on it.
+
+## React Waypoints
+
+Use Waypoints to track when users scroll past a certain point.
+
+```js
+import { PuckWaypoint } from '@dosomething/puck-client';
+
+const Example = () => (
+  <div className="container" style={{ height: '1000px' }}>
+    <PuckWaypoint name="half-way-point" />
+  </div>
+);
+```
+
+Available props:
+**name**: Required. Name of the waypoint.
+**onlyOnce**: Optional (Defaults  true). Waypoint only emits an event one time.
+**waypointData**: Optional (Defaults null). Additional data to track on the waypoint event.
