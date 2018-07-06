@@ -26,6 +26,10 @@ const App = () => (
   const getUser = () => (
     store.getState().user.id
   );
+  
+  const isAuthenticated = () => (
+    store.getState().user.isAuthenticated
+  );
 
   return (
     <Provider store={store}>
@@ -33,6 +37,7 @@ const App = () => (
         source="your-app-name"
         puckUrl={window.ENV.PUCK_URL}
         getUser={getUser}
+        isAuthenticated={isAuthenticated}
         history={history}
       >
         {/* ... */}
