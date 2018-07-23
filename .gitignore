@@ -1,6 +1,7 @@
 # Builds
 dist/
-build/
+cjs/
+es/
 
 # Ignore dependencies
 node_modules/
