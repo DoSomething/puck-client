@@ -2,13 +2,17 @@
   "name": "@dosomething/puck-client",
   "version": "1.5.1",
   "description": "The client for Puck",
-  "main": "build/index.js",
+  "module": "es/index.js",
+  "main": "cjs/index.js",
   "scripts": {
     "test": "npm run test",
     "lint": "eslint",
     "start": "NODE_ENV=development webpack --watch",
     "build:dev": "NODE_ENV=development webpack",
-    "build": "NODE_ENV=production webpack && babel lib --out-dir build",
+    "build:browser": "NODE_ENV=production webpack",
+    "build:es": "NODE_ENV=production babel lib --out-dir es",
+    "build:cjs": "NODE_ENV=test babel lib --out-dir cjs",
+    "build": "npm run build:browser && npm run build:es && npm run build:cjs",
     "prepublishOnly": "npm run build"
   },
   "babel": {
