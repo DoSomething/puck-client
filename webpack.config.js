@@ -1,17 +1,16 @@
-const webpack = require('webpack');
 const configure = require('@dosomething/webpack-config');
 const path = require('path');
 
 module.exports = configure({
-  entry: [
-    './lib/index.js',
-  ],
-  module: {
-    loaders: [
-      { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', exclude: /node_modules/ },
-    ],
+  entry: {
+    index: './lib/index.js',
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', exclude: /node_modules/ },
+    ],
   },
 });
