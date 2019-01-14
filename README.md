@@ -18,6 +18,7 @@ import { Provider } from 'react-redux';
 import { PuckProvider } from '@dosomething/puck-client';
 import initializeStore from './initializeStore';
 import historyInit from './historyInit';
+import report from './error-handler';
 
 const App = () => (
   const store = initializeStore();
@@ -39,6 +40,7 @@ const App = () => (
         getUser={getUser}
         isAuthenticated={isAuthenticated}
         history={history}
+        onError={report}
       >
         {/* ... */}
       </PuckProvider>
@@ -102,6 +104,7 @@ When using Puck without React, add the Puck Engine to your app.
 
 ```js
 import { Engine } from '@dosomething/puck-client';
+import report from './error-reporter'
 
 let puck = null;
 
@@ -110,6 +113,7 @@ function onReady() {
     source: "your-app-name",
     puckUrl: window.env.PUCK_URL,
     getUser: () => window.state.userId,
+    onError: report,
   });
 }
 
