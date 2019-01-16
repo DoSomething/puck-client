@@ -140,3 +140,7 @@ Available props:
 **name**: Required. Name of the waypoint.
 **onlyOnce**: Optional (Defaults  true). Waypoint only emits an event one time.
 **waypointData**: Optional (Defaults null). Additional data to track on the waypoint event.
+
+
+## Error Handling (Optional)
+The `PuckProvider` and `Engine` both accept an `onError` parameter function, which will be invoked whenever the internally utilized socket emits a [`'connect-error'`](https://socket.io/docs/client-api/#Event-%E2%80%98connect-error%E2%80%99-1) or [`'error'`](https://socket.io/docs/client-api/#Event-%E2%80%98error%E2%80%99) event.
