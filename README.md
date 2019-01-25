@@ -144,3 +144,7 @@ Available props:
 
 ## Error Handling (Optional)
 The `PuckProvider` and `Engine` both accept an `onError` parameter function, which will be invoked whenever the internally utilized socket emits a [`'connect-error'`](https://socket.io/docs/client-api/#Event-%E2%80%98connect-error%E2%80%99-1) or [`'error'`](https://socket.io/docs/client-api/#Event-%E2%80%98error%E2%80%99) event.
+
+The `onError` function is invoked with the following two parameters:
+- the name of the Socket error event (`'connect-error'` or `'error'`)
+- the error object itself (`Error`)
